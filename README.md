@@ -6,30 +6,30 @@ The project simulates e-commerce events, streams them through Pub/Sub, processes
 
 ## Architecture
 
-Event Generator
-      |
-      v
-Google Cloud Pub/Sub
-      |
-      v
-Apache Beam / Dataflow
-      |
-      +-------------------+
-      |                   |
-      v                   v
-Valid Events        Invalid Events
-      |
-      v
-BigQuery
-      |
-      v
-Dataform
-      |
-      v
-Analytics Tables
-      |
-      v
-Looker Studio
+    Event Generator
+          |
+          v
+    Google Cloud Pub/Sub
+          |
+          v
+    Apache Beam / Dataflow
+          |
+          +-------------------+
+          |                   |
+          v                   v
+    Valid Events        Invalid Events
+          |
+          v
+       BigQuery
+          |
+          v
+       Dataform
+          |
+          v
+    Analytics Tables
+          |
+          v
+    Looker Studio
 
 ## Tech Stack
 
@@ -57,7 +57,7 @@ Looker Studio
 9. Event timestamps are used for event-time processing.
 10. Processed events are written to BigQuery.
 11. Dataform creates analytical tables and data-quality assertions.
-12. Looker Studio visualizes real-time business metrics.
+12. Looker Studio visualizes the resulting business metrics.
 
 ## Event Validation
 
@@ -105,7 +105,7 @@ Analytics are available by:
 - Revenue
 - Event count
 
-Revenue is calculated from:
+Revenue is calculated using:
 
     quantity × price
 
@@ -138,7 +138,7 @@ The dashboard provides analysis of:
 
 ## Streaming Pipeline
 
-The streaming architecture is designed around:
+The streaming architecture is built around:
 
 - Pub/Sub for event ingestion
 - Apache Beam for stream processing
@@ -159,16 +159,16 @@ Infrastructure and project configuration are maintained in GitHub to support rep
 
 ## Project Structure
 
-real-time-e-commerce-analytics/
-│
-├── dataflow/
-├── data/
-├── dataform/
-├── terraform/
-├── tests/
-├── docs/
-├── README.md
-└── .gitignore
+    real-time-e-commerce-analytics/
+    |
+    ├── dataflow/
+    ├── data/
+    ├── dataform/
+    ├── terraform/
+    ├── tests/
+    ├── docs/
+    ├── README.md
+    └── .gitignore
 
 ## Key Engineering Concepts
 
@@ -189,26 +189,26 @@ real-time-e-commerce-analytics/
 
 ## End-to-End Flow
 
-Python Event Generator
-        |
-        v
-Google Cloud Pub/Sub
-        |
-        v
-Apache Beam / Dataflow
-        |
-        +---- Invalid Events
-        |
-        +---- Valid Events
-                  |
-                  v
-              BigQuery
-                  |
-                  v
-               Dataform
-                  |
-                  v
-            Analytics Tables
-                  |
-                  v
-            Looker Studio
+    Python Event Generator
+            |
+            v
+    Google Cloud Pub/Sub
+            |
+            v
+    Apache Beam / Dataflow
+            |
+            +---- Invalid Events
+            |
+            +---- Valid Events
+                      |
+                      v
+                  BigQuery
+                      |
+                      v
+                   Dataform
+                      |
+                      v
+              Analytics Tables
+                      |
+                      v
+                Looker Studio
